@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'; //useEffect serve pra que a gente dispare alguma função em um determinado momento do componente
+import React, {useState, useEffect} from 'react';  //useEffect serve pra que a gente dispare alguma função em um determinado momento do componente
 import imgLogo from '../../assets/logo.svg';
 import {Link, useHistory} from 'react-router-dom';
 import {FiPower, FiTrash2} from 'react-icons/fi';
@@ -29,7 +29,7 @@ export default function Profile(){
                     Authorization: ongId,
                 }
             });
-            setIncidents(incidents.filter(incident => incident.id !== id));//Mantém apenas os incidentes que o id for diferente do que foi DELETADO
+            setIncidents(incidents.filter(incident => incident.id !== id)); //Mantém apenas os incidentes que o id for diferente do que foi DELETADO
         } catch (err) {
             alert('Erro ao deletar caso, tente novamente');
         }
