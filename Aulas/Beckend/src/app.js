@@ -1,18 +1,15 @@
 const express = require('express'); //importando o express (Express é um frameWork)
 const cors = require('cors');//Define quem pode acessar a aplicação
+const {errors} = require('celebrate');
 const routes = require('./routes'); //Como estou importando um arquivo, preciso colocar o "./" senão seria interpretado como pacote
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(routes);
+app.use(errors());
 
-app.listen(3333);
-
-
-
-
-
+module.exports = app;
 
 /**
  * Rota/ Recurso
